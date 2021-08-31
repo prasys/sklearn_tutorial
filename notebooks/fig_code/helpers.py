@@ -22,12 +22,15 @@ def plot_iris_knn():
 
     x_min, x_max = X[:, 0].min() - .1, X[:, 0].max() + .1
     y_min, y_max = X[:, 1].min() - .1, X[:, 1].max() + .1
-    xx, yy = np.meshgrid(np.linspace(x_min, x_max, 100),
-                         np.linspace(y_min, y_max, 100))
-    Z = knn.predict(np.c_[xx.ravel(), yy.ravel()])
+    xx, yy = np.meshgrid(np.linspace(x_min, x_max, 101),
+                         np.linspace(y_min, y_max, 101))
+    # mid-cell points
+    xxm = 0.25*(xx[:-1, :-1] + xx[1:, :-1] + xx[1:, :-1] + xx[1:, 1:])
+    yym = 0.25*(yy[:-1, :-1] + yy[1:, :-1] + yy[1:, :-1] + yy[1:, 1:])
+    Z = knn.predict(np.c_[xxm.ravel(), yym.ravel()])
 
     # Put the result into a color plot
-    Z = Z.reshape(xx.shape)
+    Z = Z.reshape(xxm.shape)
     pl.figure()
     pl.pcolormesh(xx, yy, Z, cmap=cmap_light)
 
