@@ -62,12 +62,15 @@ def visualize_tree(estimator, X, y, boundaries=True,
 
     x_min, x_max = xlim
     y_min, y_max = ylim
-    xx, yy = np.meshgrid(np.linspace(x_min, x_max, 100),
-                         np.linspace(y_min, y_max, 100))
-    Z = estimator.predict(np.c_[xx.ravel(), yy.ravel()])
+    xx, yy = np.meshgrid(np.linspace(x_min, x_max, 101),
+                         np.linspace(y_min, y_max, 101))
+    # mid-cell points
+    xxm = 0.25*(xx[:-1, :-1] + xx[1:, :-1] + xx[1:, :-1] + xx[1:, 1:])
+    yym = 0.25*(yy[:-1, :-1] + yy[1:, :-1] + yy[1:, :-1] + yy[1:, 1:])
+    Z = estimator.predict(np.c_[xxm.ravel(), yym.ravel()])
 
     # Put the result into a color plot
-    Z = Z.reshape(xx.shape)
+    Z = Z.reshape(xxm.shape)
     plt.figure()
     plt.pcolormesh(xx, yy, Z, alpha=0.2, cmap='rainbow')
     plt.clim(y.min(), y.max())
