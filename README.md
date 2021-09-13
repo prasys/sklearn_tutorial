@@ -9,29 +9,31 @@ Original tutorial material from
 - github: [jakevdp](http://github.com/jakevdp)
 
 This repository contains notebooks and other files associated with the
-[Scikit-learn](http://scikit-learn.org) tutorial.
-
-This tutorial has been updated by NeSI (http://github.com/nesi/sklearn_tutorial.git) to run with recent
-versions of Python and its dependencies.
+[Scikit-learn](http://scikit-learn.org) tutorial. The notebooks have been 
+updated by NeSI (http://github.com/nesi/sklearn_tutorial.git) to run with recent
+versions of Python and dependencies.
 
 ## Installation Notes
-This tutorial requires the following packages:
-
-- Python version 3.8 or later
-- `numpy` version 1.19 or later: http://www.numpy.org/
-- `scipy` version 1.4 or later: http://www.scipy.org/
-- `matplotlib` version 3.0 or later: http://matplotlib.org/
-- `scikit-learn` version 0.22 or later: http://scikit-learn.org
-
-Read NESI.md to find out how to run the notebooks on NeSI. All the above packages are already 
+Read NESI.md to find out how to run the notebooks on NeSI. All the packages required by the tutorial are already 
 installed on NeSI's [jupyter hub](https://jupyter.nesi.org.nz/).
 
 If you prefer to run on your laptop then we recommend that you download and install [miniconda](http://conda.pydata.org/miniconda.html).
-Once this is installed, the following command will install all required packages in your Python environment (2021):
+Once `miniconda` is installed, the following command will install all required packages in your Python environment.
 ```
-$ conda create -n skl_tut install numpy scipy pywidgets matplotlib scikit-learn ipython-notebook pillow jupyterlab
-$ conda activate skl_tut
+conda create -n skl_tut install numpy scipy pywidgets matplotlib scikit-learn ipython-notebook pillow jupyterlab
 ```
+Then activate your environment:
+```
+conda activate skl_tut
+```
+
+The tutorial material has been tested with the following package versions:
+- Python version 3.8
+- `numpy` version 1.19: http://www.numpy.org/
+- `scipy` version 1.4: http://www.scipy.org/
+- `matplotlib` version 3.0: http://matplotlib.org/
+- `scikit-learn` version 0.22: http://scikit-learn.org
+
 
 ## Downloading the Tutorial Materials
 We have already installed all the notebooks on NeSI's [jupyter hub](https://jupyter.nesi.org.nz/). However,
