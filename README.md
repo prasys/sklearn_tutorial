@@ -23,9 +23,10 @@ This tutorial requires the following packages:
 - `matplotlib` version 3.0 or later: http://matplotlib.org/
 - `scikit-learn` version 0.22 or later: http://scikit-learn.org
 
-The easiest way to get these is to use the [conda](https://store.continuum.io/) environment manager.
-I suggest downloading and installing [miniconda](http://conda.pydata.org/miniconda.html).
+Read NESI.md to find out how to run the notebooks on NeSI. All the above packages are already 
+installed on NeSI's [jupyter hub](https://jupyter.nesi.org.nz/).
 
+If you prefer to run on your laptop then we recommend that you download and install [miniconda](http://conda.pydata.org/miniconda.html).
 Once this is installed, the following command will install all required packages in your Python environment (2021):
 ```
 $ conda create -n skl_tut install numpy scipy pywidgets matplotlib scikit-learn ipython-notebook pillow jupyterlab
@@ -33,18 +34,15 @@ $ conda activate skl_tut
 ```
 
 ## Downloading the Tutorial Materials
-I would highly recommend using git, not only for this tutorial, but for the
-general betterment of your life.  Once git is installed, you can clone the
-material in this tutorial by using the git address shown above:
-
+We have already installed all the notebooks on NeSI's [jupyter hub](https://jupyter.nesi.org.nz/). However,
+if you prefer to run on your laptop, you will need to clone the repository:
 ```
-git clone git://github.com/nesi/sklearn_tutorial.git
+git clone https://github.com/nesi/sklearn_tutorial.git
 ```
-
-If you can't or don't want to install git, there is a link above to download
-the contents of this repository as a zip file.  I may make minor changes to
-the repository in the days before the tutorial, however, so cloning the
-repository is a much better option.
+or 
+```
+git clone git@github.com:nesi/sklearn_tutorial.git
+```
 
 Note also that some of the code in these notebooks will not work outside the
 directory structure of this tutorial, so it is important to clone the full
