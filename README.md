@@ -28,11 +28,11 @@ conda activate skl_tut
 ```
 
 The tutorial material has been tested with the following package versions:
-- Python version 3.8
-- `numpy` version 1.19: http://www.numpy.org/
-- `scipy` version 1.4: http://www.scipy.org/
-- `matplotlib` version 3.0: http://matplotlib.org/
-- `scikit-learn` version 0.22: http://scikit-learn.org
+- Python version 3.8.1
+- `numpy` version 1.18.1: http://www.numpy.org/
+- `scipy` version 1.3.3: http://www.scipy.org/
+- `matplotlib` version 3.1.2: http://matplotlib.org/
+- `scikit-learn` version 0.22.1: http://scikit-learn.org
 
 
 ## Downloading the Tutorial Materials
