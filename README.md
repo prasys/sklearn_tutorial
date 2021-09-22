@@ -1,8 +1,6 @@
 # Scikit-learn Tutorial
 
-Original tutorial material from
-
-*Jake VanderPlas*
+Original tutorial material from *Jake VanderPlas*
 
 - email: <jakevdp@uw.edu>
 - twitter: [@jakevdp](https://twitter.com/jakevdp)
@@ -22,7 +20,7 @@ installed on NeSI's [jupyter hub](https://jupyter.nesi.org.nz/).
 If you prefer to run on your laptop then we recommend that you download and install [miniconda](http://conda.pydata.org/miniconda.html).
 Once `miniconda` is installed, the following command will install all required packages in your Python environment.
 ```
-conda create -n skl_tut install numpy scipy pywidgets matplotlib scikit-learn ipython-notebook pillow jupyterlab
+conda create -n skl_tut python=3.8 numpy scipy ipywidgets matplotlib scikit-learn pillow jupyterlab
 ```
 Then activate your environment:
 ```
