@@ -13,7 +13,9 @@ This repository contains notebooks and other files associated with the
 updated by NeSI (http://github.com/nesi/sklearn_tutorial.git) to run with recent
 versions of Python and dependencies.
 
+
 ## Installation Notes
+
 Read NESI.md to find out how to run the notebooks on NeSI. All the packages required by the tutorial are already 
 installed on NeSI's [jupyter hub](https://jupyter.nesi.org.nz/).
 
@@ -36,14 +38,11 @@ The tutorial material has been tested with the following package versions:
 
 
 ## Downloading the Tutorial Materials
+
 We have already installed all the notebooks on NeSI's [jupyter hub](https://jupyter.nesi.org.nz/). However,
 if you prefer to run on your laptop, you will need to clone the repository:
 ```
 git clone https://github.com/nesi/sklearn_tutorial.git
-```
-or 
-```
-git clone git@github.com:nesi/sklearn_tutorial.git
 ```
 
 Note also that some of the code in these notebooks will not work outside the
@@ -53,7 +52,9 @@ repository if possible.
 
 ## Notebook Listing
 
+If you have followed the installation instructions to run on your laptop, start `JupyterLab`:
 ```
 jupyter lab 
 ```
-Then navigate the directory structure. The notebooks are under the directory `notebooks`. Click on `index.ipynb` to get started.
+Then navigate the directory structure. The notebooks are under the directory `notebooks`.
+Click on `Index.ipynb` to get started.
