@@ -17,7 +17,7 @@ versions of Python and dependencies.
 Read [NESI.md](NESI.md) to find out how to run the notebooks on NeSI.
 All the packages required by the tutorial are already installed on NeSI's [jupyter hub](https://jupyter.nesi.org.nz/).
 
-If you prefer to run on your laptop then we recommend that you download and install [miniconda](http://conda.pydata.org/miniconda.html).
+If you prefer to run on your own computer then we recommend that you download and install [miniconda](http://conda.pydata.org/miniconda.html).
 Once `miniconda` is installed, the following command will install all required packages in your Python environment.
 ```
 conda create -n skl_tut python=3.8 numpy scipy ipywidgets matplotlib scikit-learn pillow jupyterlab
@@ -29,9 +29,9 @@ conda activate skl_tut
 
 The tutorial material has been tested with the following package versions:
 - Python version 3.8.1
-- `numpy` version 1.18.1: http://www.numpy.org/
-- `scipy` version 1.3.3: http://www.scipy.org/
-- `matplotlib` version 3.1.2: http://matplotlib.org/
+- `numpy` version 1.19.1: http://www.numpy.org/
+- `scipy` version 1.4.1: http://www.scipy.org/
+- `matplotlib` version 3.0.3: http://matplotlib.org/
 - `scikit-learn` version 0.22.1: http://scikit-learn.org
 
 
