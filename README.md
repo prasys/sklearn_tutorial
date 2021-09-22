@@ -14,8 +14,8 @@ versions of Python and dependencies.
 
 ## Installation Notes
 
-Read NESI.md to find out how to run the notebooks on NeSI. All the packages required by the tutorial are already 
-installed on NeSI's [jupyter hub](https://jupyter.nesi.org.nz/).
+Read [NESI.md](NESI.md) to find out how to run the notebooks on NeSI.
+All the packages required by the tutorial are already installed on NeSI's [jupyter hub](https://jupyter.nesi.org.nz/).
 
 If you prefer to run on your laptop then we recommend that you download and install [miniconda](http://conda.pydata.org/miniconda.html).
 Once `miniconda` is installed, the following command will install all required packages in your Python environment.
