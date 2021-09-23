@@ -1,6 +1,18 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import warnings
+import ipywidgets
+
+
+def interact_adaptor(obj, **kw):
+    # API of ipywidgets changed between versions
+    ipywdgts_version = int(ipywidgets.__version__.split('.')[0])
+    if ipywdgts_version < 7:
+        return ipywidgets.interact(obj, **kw)
+    else:
+        interactive_plot = ipywidgets.interactive(obj, **kw)
+        output = interactive_plot.children[-1]
+        return interactive_plot
 
 
 def plot_venn_diagram():
@@ -117,20 +129,13 @@ def plot_tree_interactive(X, y):
         clf = DecisionTreeClassifier(max_depth=depth, random_state=0)
         visualize_tree(clf, X, y)
 
-    import ipywidgets
-    ipywdgts_version = int(ipywidgets.__version__.split('.')[0])
-    if ipywdgts_version < 7:
-        return ipywidgets.interact(interactive_tree, depth=(1, 5))
-    else:
-        interactive_plot = ipywidgets.interactive(interactive_tree, depth=(1, 5))
-        output = interactive_plot.children[-1]
-        return interactive_plot
+    return interact_adaptor(interactive_tree, depth=(1, 5))
 
 
 def plot_kmeans_interactive(min_clusters=1, max_clusters=6):
     from ipywidgets import interact
     from sklearn.metrics.pairwise import euclidean_distances
-    from sklearn.datasets.samples_generator import make_blobs
+    from sklearn.datasets import make_blobs
 
     with warnings.catch_warnings():
         warnings.filterwarnings('ignore')
@@ -189,8 +194,8 @@ def plot_kmeans_interactive(min_clusters=1, max_clusters=6):
                          ha='right', va='top', size=14)
 
     
-    return interact(_kmeans_step, frame=(0, 50),
-                    n_clusters=[min_clusters, max_clusters])
+    return interact_adaptor(_kmeans_step, frame=(0, 50),
+                            n_clusters=[min_clusters, max_clusters])
 
 
 def plot_image_components(x, coefficients=None, mean=0, components=None,
@@ -241,4 +246,4 @@ def plot_pca_interactive(data, n_components=6):
         plot_image_components(data[i], Xproj[i],
                               pca.mean_, pca.components_)
     
-    interact(show_decomp, i=(0, data.shape[0] - 1));
+    interact_adaptor(show_decomp, i=(0, data.shape[0] - 1));
