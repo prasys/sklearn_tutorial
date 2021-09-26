@@ -14,7 +14,7 @@ URLS = {
 }
 
 
-DATASET_PATH = Path(__file__).parent / "penguins.csv"
+DATASET_PATH = Path(__file__).parent / "dataset.csv"
 
 
 def download_penguins(urls: T.Mapping[str, str] = URLS, path=DATASET_PATH):
@@ -26,7 +26,6 @@ def download_penguins(urls: T.Mapping[str, str] = URLS, path=DATASET_PATH):
     dset_raw = pd.concat([pd.read_csv(url) for url in urls.values()])
     cols = [
         "Species",
-        "Island",
         "Culmen Length (mm)",
         "Culmen Depth (mm)",
         "Flipper Length (mm)",
@@ -35,22 +34,19 @@ def download_penguins(urls: T.Mapping[str, str] = URLS, path=DATASET_PATH):
     ]
     dset = (
         dset_raw[cols]
-        .astype({"Species": "category"})
         .where(lambda x: x["Sex"].isin(["MALE", "FEMALE"]))
         .dropna()
-        .pipe(lambda df: pd.get_dummies(df, columns=["Island", "Sex"], prefix_sep=" "))
+        .pipe(lambda df: pd.get_dummies(df, columns=["Sex"], prefix_sep=" "))
+        .drop(columns=["Sex MALE"])
     )
     dset.to_csv(path, index=False)
 
 
-def load_penguins(
-    path: Path = DATASET_PATH, as_frame: bool = False
-) -> T.Union[T.Tuple[pd.DataFrame, pd.Series], Bunch]:
+def load_penguins(path: Path = DATASET_PATH) -> Bunch:
     """Load the Palmer Penguins dataset
 
     :params path: file path for the .csv file to load
-    :params as_frame: return features and target as a Pandas DataFrame and Series
-    :returns: a `Bunch` object or a Pandas DataFrame and Series
+    :returns: features and target data
     """
 
     dset = pd.read_csv(path)
@@ -58,15 +54,11 @@ def load_penguins(
     features = dset.drop(columns="Species")
     target = dset["Species"].astype("category")
 
-    if as_frame:
-        penguins = features, target
-
-    else:
-        penguins = Bunch(
-            data=features.values,
-            feature_names=features.columns.values,
-            target=target.cat.codes,
-            target_names=target.cat.categories.values,
-        )
+    penguins = Bunch(
+        data=features.values,
+        feature_names=features.columns.values,
+        target=target.cat.codes,
+        target_names=target.cat.categories.values,
+    )
 
     return penguins
