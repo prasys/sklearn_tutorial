@@ -35,6 +35,7 @@ The tutorial material has been tested on NeSI with the following package version
 - `scikit-learn` version 0.22.1: https://scikit-learn.org
 - `jupyterlab` version 3.9.1: https://jupyterlab.readthedocs.io
 - `ipywidgets` version 7.5.1: https://ipywidgets.readthedocs.io
+- `pandas` version 1.1.0: https://pandas.pydata.org/
 
 
 ## Downloading the Tutorial Materials
