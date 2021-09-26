@@ -20,7 +20,7 @@ All the packages required by the tutorial are already installed on NeSI's [jupyt
 If you prefer to run on your own computer then we recommend that you download and install [miniconda](http://conda.pydata.org/miniconda.html).
 Once `miniconda` is installed, the following command will install all required packages in your Python environment.
 ```
-conda create -n skl_tut python=3.8 numpy scipy ipywidgets matplotlib scikit-learn pillow jupyterlab
+conda create -n skl_tut -c conda-forge python=3.8 numpy scipy matplotlib scikit-learn pillow jupyterlab ipywidgets
 ```
 Then activate your environment:
 ```
