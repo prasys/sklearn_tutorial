@@ -1,0 +1,15 @@
+name: skl_tut
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.8.1
+  - pip=21.3.1
+  - pip:
+    - numpy==1.19.1
+    - scipy==1.4.1
+    - matplotlib==3.0.3
+    - scikit-learn==0.22.1
+    - jupyterlab==3.1.9
+    - ipywidgets==7.5.1
+    - pandas==1.1.0
